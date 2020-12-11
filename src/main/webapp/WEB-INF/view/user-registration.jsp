@@ -6,6 +6,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+	.error {
+		color: red;
+		position: fixed;
+		text-align: left;
+		margin-left: 30px;
+		
+	}
+	
+	.txtBox{
+		position: fixed;
+	}
+</style>
 </head>
 <body>
 	<h1 align="center">Register Here</h1>
@@ -14,10 +27,12 @@
 			<label>Name</label>
 			<label>:</label>
 			<form:input path="name"/>
+			<form:errors path="name" cssClass="error" />
 			<br><br>
 			<label>User Name</label>
 			<label>:</label>
 			<form:input path="userName"/>
+			<form:errors path="userName" cssClass="error" />
 			<br><br>
 			<label>Password</label>
 			<label>:</label>
@@ -42,8 +57,29 @@
 			<span>Male</span><form:radiobutton path="gender" value = "male"/>
 			<span>Female</span><form:radiobutton path="gender" value = "female"/>
 			<br><br>
+			<div align = "center" style="txtBox">
+				<label>Age : </label>
+				<form:input path="age"/>
+				<form:errors path = "age" cssClass="error"/>
+			</div>
+			<br><br>
+			<h3 align="center">Communication Details</h3>
+			<div>
+				<label>Email : </label>
+				<form:input path="communicationDto.email"/>
+				<form:errors path = "communicationDto.email" cssClass="error"/>
+			</div>
+			<br><br>
+			<label>Phone : </label>
+			<form:input path="communicationDto.phone"/>
+			<form:errors path = "communicationDto.phone"/>
+			<form:errors path = "communicationDto.phone.countryCode"/>
+			<form:errors path = "communicationDto.phone.phoneNumber"/>
+			<br><br>
 			<input type="submit" value = "Register"/>
 		</form:form>
 	</div>
+	
+	
 </body>
 </html>

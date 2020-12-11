@@ -18,5 +18,9 @@
 		${hobby } <span> </span>
 	</c:forEach><br>
 	Gender : ${registration.gender}
+	<br>
+	Email : ${registration.communicationDto.email}
+	<br>
+	Phone Number : ${registration.communicationDto.phone}
 </body>
 </html>
