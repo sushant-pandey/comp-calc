@@ -18,17 +18,17 @@ pipeline {
                 deploy adapters: [tomcat9(credentialsId: 'jenkinsdeployer', path: '', url: 'http://localhost:9000/')], contextPath: 'comp-calc', war: '**/*.war'
             }
         }
-        stage('Parallel Builds'){
-            steps{
-                parallel {
-                    steps{
-                        echo "parallel step 1"
+        stage('run-parallel-branches') {
+            steps {
+                parallel(
+                    a: {
+                        echo "This is branch a"
+                    },
+                    b: {
+                        echo "This is branch b"
                     }
-                    steps{
-                        echo "parallel step 2"
-                    }
-                }
+                )
             }
-        }
+}
     }
 }
