@@ -21,10 +21,10 @@ pipeline {
         stage('Parallel Builds'){
             steps{
                 parallel {
-                    a: {
+                    steps{
                         echo "parallel step 1"
-                    },
-                    b: {
+                    }
+                    steps{
                         echo "parallel step 2"
                     }
                 }
